@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CIS174_TestCoreApp.Models.Achievements>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AchievementsId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FamousPeopleId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.doa)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AchievementsId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FamousPeopleId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.doa)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.AchievementsId }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.AchievementsId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
